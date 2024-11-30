@@ -1,57 +1,110 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// Animation for the logo
-gsap.to(".logo", {
+// Logo animation
+gsap.set(".logo", { transformOrigin: '0 0' });
+
+gsap.from(".logo", {
     scrollTrigger: {
-        trigger: ".container", // Trigger the animation on the container
-        start: "top top",      // Start when the top of the container hits the top of the viewport
-        end: "50% 50%",        // End when the center of the container hits the center of the viewport
-        scrub: true,           // Enable smooth scrubbing
-        pin: true,             // Pin the container during the animation
-        // markers: true          // Enable markers for debugging (optional)
+        trigger: ".container",
+        start: "top top",
+        end: "50% 50%",
+        scrub: true,
+        pin: true,
     },
-    x: -1400,
-    y: 275,                    // Move to the left
-    scale: 0.1,                // Scale down the logo
-    duration: 1,               // Animation duration
-    ease: "power1.inOut",      // Easing function
-    onComplete: () => {        // Callback to execute when animation completes
-        gsap.set(".logo", { opacity: 0 }); // Instantly hide the logo
-    },
-    onReverseComplete: () => { // Callback when animation is reversed
-        gsap.set(".logo", { opacity: 1 }); // Instantly show the logo again
-    }
+    scale: 10,
+    x: 40,
+    duration: 1,
+    ease: "none",
 });
 
-// Animate the project date in section 2 as it scrolls into view
+// Project date animation in Section 2
 gsap.to("#section2 .project-date", {
-  scrollTrigger: {
-      trigger: "#section2",    // Trigger the animation on #section2
-      start: "top 70%",        // Start when top of #section2 reaches 80% of viewport
-      end: "top 5%",          // End when top of #section2 reaches 20% of viewport
-      scrub: 1,                // Smooth scrubbing
-      markers: true            // Enable markers for debugging (optional)
-  },
-  x: 75,                       // Slide project-date 50px to the right
-  opacity: 1,                  // Fade it in
-  duration: 3,               // Animation duration
-  ease: "power2.out"           // Smooth easing
+    scrollTrigger: {
+        trigger: "#section2",
+        start: "top 70%",
+        end: "top 5%",
+        scrub: 1,
+    },
+    x: 75,
+    opacity: 1,
+    duration: 3,
+    ease: "power2.out"
 });
 
-
-// Animate the image in section 2 as it scrolls into view
-gsap.to("#section2 .img img", {
+// Project object animation in Section 2
+gsap.to("#section2 .project-object img", {
     scrollTrigger: {
-        trigger: "#section2",    // Trigger animation when #section2 is in view
-        start: "top 70%",        // Start when top of #section2 reaches 80% of viewport
-        end: "bottom 20%",          // End when top of #section2 reaches 20% of viewport
-        scrub: 1,                // Smooth scrubbing
-        markers: true            // Enable markers for debugging (optional)
+        trigger: "#section2",
+        start: "top 60%",
+        end: " top top",
+        scrub: 1,
+        markers: true
     },
     y: -125,
-    x: -195,                     // Move image upward
-    opacity: 1,                  // Fade image in
-    duration: 3,               // Animation duration
-    ease: "power2.out"           // Smooth easing for natural movement
+    x: -195,
+    opacity: 1,
+    duration: 3,
+    ease: "power2.out"
+});
+
+// About image animation in Section 3
+gsap.to("#section3 .about-img1", {
+    scrollTrigger: {
+        trigger: "#section3",
+        start: "top 100%",
+        end: "bottom 50%",
+        scrub: true,
+        markers: true
+    },
+    x: 0,
+    opacity: 1,
+    duration: 2,
+    ease: "power2.out"
+});
+
+
+// Animate h1 in Section 3 with a bounce effect
+gsap.from("#section3 .about-me h1", {
+    scrollTrigger: {
+        trigger: "#section3",
+        start: "top 75%",         // Start animation when section is 75% in view
+        end: "top 50%",          // Stop tracking after top of section passes 50%
+        toggleActions: "play none none none", // Play once, no resets
+        markers: true            // Debugging markers (optional)
+    },
+    y: -50,                     // Start 100px above its position
+    opacity: 0,                  // Start invisible
+    duration: 1,                 // Animation duration
+    ease: "bounce.out"           // Bounce effect on entry
+});
+
+// Animate h2 in Section 3 with a bounce effect
+gsap.from("#section3 .about-me h2", {
+    scrollTrigger: {
+        trigger: "#section3",
+        start: "top 75%",
+        end: "top 50%",
+        toggleActions: "play none none none",
+        markers: true
+    },
+    y: -50,
+    opacity: 0,
+    duration: 1.2,               // Slightly longer for staggered effect
+    ease: "bounce.out"
+});
+
+// Animate p in Section 3 with a bounce effect
+gsap.from("#section3 .about-me p", {
+    scrollTrigger: {
+        trigger: "#section3",
+        start: "top 75%",
+        end: "top 50%",
+        scrub: true,
+        markers: true,
+    },
+    x: 50,
+    opacity: 0,
+    duration: 1.4,               // Slightly longer for staggered effect
+    ease: "power2.in"
 });
 

@@ -78,20 +78,18 @@ section {
 }
 
 .logo {
-    position: absolute; /* Position absolute to the container */
-    left: 56%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    text-align: center; /* Center text inside the logo div */
-    top: 150px;
+    position: fixed; 
+    top: 5px;
+    left: 5px;
 
   }
   
   .logo h1 {
-    font-size: 94vh; /* Large font size for the logo */
+    font-size: 5vw; /* Large font size for the logo */
     font-family: 'Horst';
     color: black;
     font-weight: 100;
-    letter-spacing: -65px;
+    letter-spacing: -0.1em;
     width: 90%;
   }
 
@@ -141,7 +139,7 @@ section {
 }
 
 /* Make the right (last) flexbox larger */
-.img {
+.project-object {
     flex-grow: 3;    /* Allows it to grow the most */
     flex-shrink: 1;
     flex-basis: 35%; /* Set a larger base width */
@@ -156,7 +154,7 @@ section {
     text-transform: uppercase;
 }
 
-.img h1 {
+.project-object h1 {
     font-size: 26vh;
     rotate: -90deg;
     position: absolute;
@@ -167,12 +165,12 @@ section {
     bottom: -70vh;
 }
 
-.img {
+.project-object {
     flex-grow: 2;
     flex-basis: 30%;
 }
 
-.img img {
+.project-object img {
     width: 70%;
     position: absolute;
     rotate: -129deg;
@@ -184,5 +182,87 @@ section {
 
 
 #section3 {
-    background-color: #ccddff;
+    background-color: white;
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between items */
+    align-items: center;
+    height: 100vh;
+    margin-top: 20px;
+    padding: 0 50px; /* Optional: Add some padding for spacing around the edges */
 }
+
+.about-me {
+    flex: 1; /* Allow it to grow and take equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me h1, .about-me h2, .about-me p {
+    margin: 0 auto; /* Center-align content within the project */
+}
+
+
+.about-me h1 {
+    margin: 0;
+    font-family: "ivypresto-headline", serif;
+    position: absolute;
+    top: 230%;
+    left: 30%;
+    font-weight: 100;
+    font-size: 6vw;
+    letter-spacing: -1px;
+    margin-right: 0; /* No margin needed on the right */
+    margin-left: auto; /* Pushes the h1 to the right */
+}
+
+.about-me h2 {
+    margin: 0;
+    font-family: "ivypresto-headline", serif;
+    position: absolute;
+    top: 243%;
+    left: 17%;
+    font-weight: 100;
+    font-size: 3vw;
+    letter-spacing: -1px;
+    margin-right: 0; /* No margin needed on the right */
+    margin-left: auto; /* Pushes the h1 to the right */
+}
+
+.about-me p {
+    position: absolute;
+    top: 252%;
+    width: 40%;
+    left: 10%;
+    font-size: 1vw;
+}
+
+.pic-mayca {
+    flex: 1; /* Equal space allocation */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.pic-mayca img {
+    max-width: 60%; /* Ensure image scales within its container */
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.about-me img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0; /* Add spacing for aesthetics */
+}
+
+.about-img1 {
+    rotate: -2deg;
+    transform: translateX(-50%);
+}
+
+.about-img2{
+    rotate: 180deg;
+}
+
+
