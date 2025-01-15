@@ -38,7 +38,6 @@ gsap.to("#section2 .project-object img", {
         start: "top 60%",
         end: " top top",
         scrub: 1,
-        markers: true
     },
     y: -125,
     x: -195,
@@ -51,10 +50,9 @@ gsap.to("#section2 .project-object img", {
 gsap.to("#section3 .about-img1", {
     scrollTrigger: {
         trigger: "#section3",
-        start: "top 100%",
+        start: "top 90%",
         end: "bottom 50%",
         scrub: true,
-        markers: true
     },
     x: 0,
     opacity: 1,
@@ -62,49 +60,15 @@ gsap.to("#section3 .about-img1", {
     ease: "power2.out"
 });
 
-
-// Animate h1 in Section 3 with a bounce effect
-gsap.from("#section3 .about-me h1", {
+gsap.from("#section3 .about-img2 img", {
     scrollTrigger: {
-        trigger: "#section3",
-        start: "top 75%",         // Start animation when section is 75% in view
-        end: "top 50%",          // Stop tracking after top of section passes 50%
-        toggleActions: "play none none none", // Play once, no resets
-        markers: true            // Debugging markers (optional)
+        trigger: "#section3",        
+        start: "top 50%",           
+        end: "bottom 70%",           
+        scrub: true,                
     },
-    y: -50,                     // Start 100px above its position
-    opacity: 0,                  // Start invisible
-    duration: 1,                 // Animation duration
-    ease: "bounce.out"           // Bounce effect on entry
+    x: 275,                         
+    opacity: 1,                    
+    duration: 2,                  
+    ease: "power2.out"              
 });
-
-// Animate h2 in Section 3 with a bounce effect
-gsap.from("#section3 .about-me h2", {
-    scrollTrigger: {
-        trigger: "#section3",
-        start: "top 75%",
-        end: "top 50%",
-        toggleActions: "play none none none",
-        markers: true
-    },
-    y: -50,
-    opacity: 0,
-    duration: 1.2,               // Slightly longer for staggered effect
-    ease: "bounce.out"
-});
-
-// Animate p in Section 3 with a bounce effect
-gsap.from("#section3 .about-me p", {
-    scrollTrigger: {
-        trigger: "#section3",
-        start: "top 75%",
-        end: "top 50%",
-        scrub: true,
-        markers: true,
-    },
-    x: 50,
-    opacity: 0,
-    duration: 1.4,               // Slightly longer for staggered effect
-    ease: "power2.in"
-});
-

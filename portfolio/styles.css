@@ -234,7 +234,7 @@ section {
     top: 252%;
     width: 40%;
     left: 10%;
-    font-size: 1vw;
+    font-size: 1.1vw;
 }
 
 .pic-mayca {
@@ -247,22 +247,23 @@ section {
 .pic-mayca img {
     max-width: 60%; /* Ensure image scales within its container */
     height: auto;
-    border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 .about-me img {
     max-width: 100%;
     height: auto;
-    margin: 10px 0; /* Add spacing for aesthetics */
+    margin: 65px 0; /* Add spacing for aesthetics */
 }
 
 .about-img1 {
-    rotate: -2deg;
+    rotate: -7deg;
     transform: translateX(-50%);
 }
 
-.about-img2{
-    rotate: 180deg;
+.about-img2 img{
+    rotate: -187deg;
+    margin-bottom: -20px; /* Adjust this value as needed */
+    margin-left: 720px;
 }
 
 
