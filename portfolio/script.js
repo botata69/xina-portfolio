@@ -101,4 +101,22 @@ document.querySelectorAll("#section2 .project-title").forEach((title) => {
     });
 });
 
+gsap.fromTo(".shape-img",
+    {
+      y: 150,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#section3",
+        start: "20% 85%",
+        end: "100% bottom",
+        scrub: true,
+      },
+      y: 0,
+      opacity: 1,
+      duration: 2,
+      ease: "power2.out"
+    }
+  );
+  
 

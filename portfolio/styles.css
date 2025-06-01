@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 @font-face {
     font-family: 'Horst';
     src: url('Horst Blackletter Demo.ttf'); /* Adjust the path if needed */
@@ -178,92 +183,258 @@ section {
     top: 125vh;
 }
 
-
-
-
 #section3 {
-    background-color: white;
-    display: flex;
-    justify-content: space-between; /* Distribute space evenly between items */
-    align-items: center;
-    height: 100vh;
-    margin-top: 20px;
-    padding: 0 50px; /* Optional: Add some padding for spacing around the edges */
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px; /* Add space without forcing image margin */
+  gap: 60px; /* Less aggressive spacing */
+}
+
+/* LEFT: Text */
 .about-me {
-    flex: 1; /* Allow it to grow and take equal space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex: 1;
+  margin-left: -90px;
 }
-
-.about-me h1, .about-me h2, .about-me p {
-    margin: 0 auto; /* Center-align content within the project */
-}
-
 
 .about-me h1 {
-    margin: 0;
-    font-family: "ivypresto-headline", serif;
-    position: absolute;
-    top: 230%;
-    left: 30%;
-    font-weight: 100;
-    font-size: 6vw;
-    letter-spacing: -1px;
-    margin-right: 0; /* No margin needed on the right */
-    margin-left: auto; /* Pushes the h1 to the right */
-}
-
-.about-me h2 {
-    margin: 0;
-    font-family: "ivypresto-headline", serif;
-    position: absolute;
-    top: 243%;
-    left: 17%;
-    font-weight: 100;
-    font-size: 3vw;
-    letter-spacing: -1px;
-    margin-right: 0; /* No margin needed on the right */
-    margin-left: auto; /* Pushes the h1 to the right */
+  font-family: "ivypresto-headline", serif;
+  font-size: 4vw;
+  font-weight: 100;
+  margin-bottom: 5px;
+  margin-right: -10px;
+  
 }
 
 .about-me p {
-    position: absolute;
-    top: 252%;
-    width: 40%;
-    left: 10%;
-    font-size: 1.1vw;
+  font-family: Arial, sans-serif;
+  font-size: 1.1vw;
+  width: 100%;
 }
 
-.pic-mayca {
-    flex: 1; /* Equal space allocation */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+/* MIDDLE: SHAPE */
+.about-shape {
+  flex: 0 0 auto;
+  z-index: 1;
+  width: 67%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 60%;
+  top: 130%;
+  transform: translate(-50%, 50%); /* Starts off-screen, slides up */
+
 }
+
+.shape-img {
+  width: 100%;
+  transform: translateY(100px);
+  opacity: 1; /* ✅ Force full opacity */
+}
+
+/* RIGHT: PHOTO */
+.pic-mayca {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* 👈 Pushes image to the right */
+  align-items: center;
+}
+
 
 .pic-mayca img {
-    max-width: 60%; /* Ensure image scales within its container */
+  width: 70%;
+  transform: rotate(-3deg);
+  margin-right: -90px; /* 👈 Adjust this value as needed */
+}
+
+
+/* Go IT */
+
+
+.project-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'helvetica';
+  }
+  
+  .scrolling-left {
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  .scrolling-left img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .fixed-right {
+    width: 50%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 60px;
+    overflow-y: auto;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  
+  .fixed-right h1 {
+    font-family: "ivypresto-headline", serif;
+    font-weight: 100;
+    font-size: 6vw;
+    letter-spacing: -1px;
+    margin-bottom: -5px;
+    margin-top: 60px;
+  }
+  
+  .fixed-right p {
+    font-size: 1vw;
+    font-family: 'helvetica';
+    line-height: 1.3;
+    margin-bottom: 40px;
+    width: 90%;
+  }
+  
+  .tools img {
+    width: 50px;
+  }
+
+  .project a {
+    text-decoration: none;
+    color: black;
+  }
+  
+ /* ✅ Wrapper for layout and spacing */
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 46vh;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Container for all slides */
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  /* ✅ All slides (hidden by default) */
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  
+  /* ✅ Active slide (visible) */
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  
+  /* Modal fullscreen */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+  }
+  
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .next {
+    right: 20px;
+  }
+
+  .video-text-wrapper {
+    display: flex;
+    align-items: center; /* vertically center the text */
+    gap: 20px; /* space between text and video */
+  }
+  
+  .prototype-text h1 {
+    font-size: 2vw;
+    font-family: 'helvetica';
+    margin: 0;
+  }
+  
+  .video-text-wrapper video {
+    max-width: 400px;
     height: auto;
-}
-
-.about-me img {
-    max-width: 100%;
-    height: auto;
-    margin: 65px 0; /* Add spacing for aesthetics */
-}
-
-.about-img1 {
-    rotate: -7deg;
-    transform: translateX(-50%);
-}
-
-.about-img2 img{
-    rotate: -187deg;
-    margin-bottom: -20px; /* Adjust this value as needed */
-    margin-left: 720px;
-}
-
-
+    border-radius: 10px;
+  }
+  
+  
+  
