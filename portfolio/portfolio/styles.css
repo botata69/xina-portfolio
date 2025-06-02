@@ -1,0 +1,462 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@font-face {
+    font-family: 'Horst';
+    src: url('Horst Blackletter Demo.ttf'); /* Adjust the path if needed */
+  }
+
+  @font-face{
+    font-family:"helvetica";
+    src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+}
+
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style the navbar */
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: center; /* Centers the navbar horizontally */
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    font-family: 'helvetica';
+    font-size: 20px;
+    top: 40px;
+}
+
+.navbar ul {
+    list-style: none;
+    position: absolute;
+    top: 30%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar ul li {
+    list-style: none;
+    gap: 20px;
+    left: 30%;
+    margin: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-info {
+    margin-left: 65%; /* Pushes top-bar to the far right */
+    text-align: right;
+    color: black;
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    top: -30px;
+}
+
+/* Full-screen sections */
+section {
+    height: 100vh; /* Full viewport height */
+    font-size: 2rem;
+}
+
+/* Distinguish sections by color */
+#section1 {
+    background-color: white;
+}
+
+.logo {
+    position: fixed; 
+    top: 5px;
+    left: 5px;
+
+  }
+  
+  .logo h1 {
+    font-size: 5vw; /* Large font size for the logo */
+    font-family: 'Horst';
+    color: black;
+    font-weight: 100;
+    letter-spacing: -0.1em;
+    width: 90%;
+  }
+
+#section2 {
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+.project-date {
+    flex-grow: 0;    /* Prevents it from growing */
+    flex-shrink: 1;  /* Allows it to shrink if needed */
+    flex-basis: 15%; /* Set a smaller base width */
+    justify-content: center;
+
+}
+
+/* Center project section (middle) */
+.project {
+    flex-grow: 2;    /* Allows it to grow more than .project-date */
+    flex-shrink: 1;
+    flex-basis: 50%; /* Sets the middle section to a larger width */
+    margin-left: 30px;
+}
+
+.project-date p {
+    margin: 150px 0px;
+    position: relative;
+    top: -27px;
+    left: -20px;
+    font-family: 'helvetica';
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.project h1 {
+    font-family: "ivypresto-headline", serif;
+    font-weight: 100;
+    font-size: 10vh;
+    letter-spacing: -1px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Make the right (last) flexbox larger */
+.project-object {
+    flex-grow: 3;    /* Allows it to grow the most */
+    flex-shrink: 1;
+    flex-basis: 35%; /* Set a larger base width */
+}
+
+.project p {
+    width: 80%;
+    margin: 0;
+    font-size: 23px ;
+    font-family: 'helvetica';
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.project-object h1 {
+    font-size: 26vh;
+    rotate: -90deg;
+    position: absolute;
+    margin: 0;
+    right: -175px;
+    letter-spacing: -20px;
+    font-weight: 300;
+    bottom: -70vh;
+}
+
+.project-object {
+    flex-grow: 2;
+    flex-basis: 30%;
+}
+
+.project-object img {
+    width: 70%;
+    position: absolute;
+    rotate: -129deg;
+    right: -500px;
+    top: 125vh;
+}
+
+#section3 {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px; /* Add space without forcing image margin */
+  gap: 60px; /* Less aggressive spacing */
+}
+
+/* LEFT: Text */
+.about-me {
+  flex: 1;
+  margin-left: -90px;
+}
+
+.about-me h1 {
+  font-family: "ivypresto-headline", serif;
+  font-size: 4vw;
+  font-weight: 100;
+  margin-bottom: 5px;
+  margin-right: -10px;
+  
+}
+
+.about-me p {
+  font-family: Arial, sans-serif;
+  font-size: 1.1vw;
+  width: 100%;
+}
+
+/* MIDDLE: SHAPE */
+.about-shape {
+  flex: 0 0 auto;
+  z-index: 1;
+  width: 67%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 60%;
+  top: 130%;
+  transform: translate(-50%, 50%); /* Starts off-screen, slides up */
+
+}
+
+.shape-img {
+  width: 100%;
+  transform: translateY(100px);
+  opacity: 1; /* ✅ Force full opacity */
+}
+
+/* RIGHT: PHOTO */
+.pic-mayca {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* 👈 Pushes image to the right */
+  align-items: center;
+}
+
+
+.pic-mayca img {
+  width: 70%;
+  transform: rotate(-3deg);
+  margin-right: -90px; /* 👈 Adjust this value as needed */
+}
+
+.linked-logo img {
+  margin-top: 20px;
+  width: 8%;
+}
+
+
+/* Go IT */
+
+
+.project-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'helvetica';
+  }
+  
+  .scrolling-left {
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  .scrolling-left img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .fixed-right {
+    width: 50%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 60px;
+    overflow-y: auto;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  
+  .fixed-right h1 {
+    font-family: "ivypresto-headline", serif;
+    font-weight: 100;
+    font-size: 6vw;
+    letter-spacing: -1px;
+    margin-bottom: -5px;
+    margin-top: 60px;
+  }
+  
+  .fixed-right p {
+    font-size: 1vw;
+    font-family: 'helvetica';
+    line-height: 1.3;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+  
+  .tools img {
+    width: 50px;
+  }
+
+  .project a {
+    text-decoration: none;
+    color: black;
+  }
+  
+ /* ✅ Wrapper for layout and spacing */
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 46vh;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Container for all slides */
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  /* ✅ All slides (hidden by default) */
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  
+  /* ✅ Active slide (visible) */
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  
+  /* Modal fullscreen */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+  }
+  
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .next {
+    right: 20px;
+  }
+
+  .video-text-wrapper {
+    display: flex;
+    align-items: center; /* vertically center the text */
+    gap: 20px; /* space between text and video */
+  }
+  
+  .prototype-text h1 {
+    font-size: 2vw;
+    font-family: 'helvetica';
+    margin: 0;
+  }
+  
+  .video-text-wrapper video {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .spol-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Ensures it wraps on smaller screens */
+  }
+  
+  .spol-item h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    flex: 1 1 200px;
+    text-align: left;
+  }
+ 
+
+  
+  
