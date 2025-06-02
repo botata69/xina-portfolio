@@ -259,6 +259,11 @@ section {
   margin-right: -90px; /* 👈 Adjust this value as needed */
 }
 
+.linked-logo img {
+  margin-top: 20px;
+  width: 8%;
+}
+
 
 /* Go IT */
 
@@ -307,7 +312,7 @@ section {
     font-size: 1vw;
     font-family: 'helvetica';
     line-height: 1.3;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     width: 90%;
   }
   
@@ -436,5 +441,22 @@ section {
     border-radius: 10px;
   }
   
+  .spol-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Ensures it wraps on smaller screens */
+  }
+  
+  .spol-item h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    flex: 1 1 200px;
+    text-align: left;
+  }
+ 
+
   
   
